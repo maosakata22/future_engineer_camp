@@ -1,19 +1,247 @@
 // types/menu.ts
 
-export type Category = "food" | "drink" | "dessert";
+export type Category = "salad" | "main" | "drink" | "dessert" | "side";
 
 export const categoryLabels: Record<Category, string> = {
-  food: "フード",
-  drink: "ドリンク",
-  dessert: "デザート",
+  salad: "🥗 サラダ",
+  main: "🍖 メイン",
+  drink: "🥤 ドリンク",
+  dessert: "🍰 デザート",
+  side: "🍽️ サイド",
 };
 
 export type MenuItem = {
   id: string;
   name: string;
-  price: number;
+  price?: number;
   category: Category;
   description?: string;
   imageUrl?: string;
-  isAvailable: boolean;
+  isAvailable?: boolean;
+  isPopular?: boolean;
+  area?: string;
 };
+
+// Menu items fetched from TheMealDB API
+export const allDishes: MenuItem[] = [
+  {
+    "id": "53006",
+    "name": "Moussaka",
+    "price": 1300,
+    "description": "Moussaka from Greek",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Greek"
+  },
+  {
+    "id": "52849",
+    "name": "Spinach & Ricotta Cannelloni",
+    "price": 1200,
+    "description": "Spinach & Ricotta Cannelloni from Italian",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/wspuvp1511303478.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Italian"
+  },
+  {
+    "id": "53098",
+    "name": "Cumberland Pie",
+    "price": 650,
+    "description": "Cumberland Pie from British",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/pvfkz61761595976.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "British"
+  },
+  {
+    "id": "53279",
+    "name": "Baklava with spiced nuts, ricotta & chocolate",
+    "price": 700,
+    "description": "Baklava with spiced nuts, ricotta & chocolate from Turkish",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ytme8t1764111401.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Turkish"
+  },
+  {
+    "id": "53149",
+    "name": "Ensaimada",
+    "price": 600,
+    "description": "Ensaimada from Spanish",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/1ugsho1763248007.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Spanish"
+  },
+  {
+    "id": "53269",
+    "name": "Hummus",
+    "price": 650,
+    "description": "Hummus from Turkish",
+    "category": "side",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/gpon5u1763801180.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Turkish"
+  },
+  {
+    "id": "53249",
+    "name": "Turkey Bánh mì",
+    "price": 1100,
+    "description": "Turkey Bánh mì from Vietnamese",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/1wj8w31763781990.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Vietnamese"
+  },
+  {
+    "id": "52819",
+    "name": "Cajun spiced fish tacos",
+    "price": 1250,
+    "description": "Cajun spiced fish tacos from Mexican",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Mexican"
+  },
+  {
+    "id": "53285",
+    "name": "Dziriat (Algerian Almond Tarts)",
+    "price": 720,
+    "description": "Dziriat (Algerian Almond Tarts) from Algerian",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ne5wzp1764115568.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Algerian"
+  },
+  {
+    "id": "53011",
+    "name": "Chicken Quinoa Greek Salad",
+    "price": 950,
+    "description": "Chicken Quinoa Greek Salad from Greek",
+    "category": "salad",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Greek"
+  },
+  {
+    "id": "53055",
+    "name": "Cevapi Sausages",
+    "price": 1150,
+    "description": "Cevapi Sausages from Croatian",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/vc08jn1628769553.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Croatian"
+  },
+  {
+    "id": "53148",
+    "name": "Crema Catalana",
+    "price": 680,
+    "description": "Crema Catalana from Spanish",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/x73ll91763247842.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Spanish"
+  },
+  {
+    "id": "52921",
+    "name": "Provençal Omelette Cake",
+    "price": 1050,
+    "description": "Provençal Omelette Cake from French",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/qwtrtp1511799242.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "French"
+  },
+  {
+    "id": "52929",
+    "name": "Timbits",
+    "price": 550,
+    "description": "Timbits from Canadian",
+    "category": "dessert",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/txsupu1511815755.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Canadian"
+  },
+  {
+    "id": "53310",
+    "name": "Challah",
+    "price": 700,
+    "description": "Challah from Polish",
+    "category": "side",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/fm01ky1764366365.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Polish"
+  },
+  {
+    "id": "53091",
+    "name": "Falafel Pita Sandwich with Tahini Sauce",
+    "price": 980,
+    "description": "Falafel Pita Sandwich with Tahini Sauce from Syrian",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ae6clc1760524712.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Syrian"
+  },
+  {
+    "id": "52785",
+    "name": "Dal fry",
+    "price": 920,
+    "description": "Dal fry from Indian",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Indian"
+  },
+  {
+    "id": "53164",
+    "name": "Spanish Chicken",
+    "price": 1280,
+    "description": "Spanish Chicken from Spanish",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/pqulvm1763282839.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "Spanish"
+  },
+  {
+    "id": "52913",
+    "name": "Brie wrapped in prosciutto & brioche",
+    "price": 850,
+    "description": "Brie wrapped in prosciutto & brioche from French",
+    "category": "side",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/qqpwsy1511796276.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "French"
+  },
+  {
+    "id": "53016",
+    "name": "Chick-Fil-A Sandwich",
+    "price": 1050,
+    "description": "Chick-Fil-A Sandwich from American",
+    "category": "main",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg",
+    "isAvailable": true,
+    "isPopular": false,
+    "area": "American"
+  }
+];

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "53006",
+    "name": "Moussaka",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg",
+    "category": "Beef",
+    "area": "Greek",
+    "dishCategory": "main"
+  },
+  {
+    "id": "52849",
+    "name": "Spinach & Ricotta Cannelloni",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/wspuvp1511303478.jpg",
+    "category": "Vegetarian",
+    "area": "Italian",
+    "dishCategory": "main"
+  },
+  {
+    "id": "53098",
+    "name": "Cumberland Pie",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/pvfkz61761595976.jpg",
+    "category": "Beef",
+    "area": "British",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "53279",
+    "name": "Baklava with spiced nuts, ricotta & chocolate",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ytme8t1764111401.jpg",
+    "category": "Dessert",
+    "area": "Turkish",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "53149",
+    "name": "Ensaimada",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/1ugsho1763248007.jpg",
+    "category": "Dessert",
+    "area": "Spanish",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "53269",
+    "name": "Hummus",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/gpon5u1763801180.jpg",
+    "category": "Side",
+    "area": "Turkish",
+    "dishCategory": "side"
+  },
+  {
+    "id": "53249",
+    "name": "Turkey Bánh mì",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/1wj8w31763781990.jpg",
+    "category": "Miscellaneous",
+    "area": "Vietnamese",
+    "dishCategory": "main"
+  },
+  {
+    "id": "52819",
+    "name": "Cajun spiced fish tacos",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
+    "category": "Seafood",
+    "area": "Mexican",
+    "dishCategory": "main"
+  },
+  {
+    "id": "53285",
+    "name": "Dziriat (Algerian Almond Tarts)",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ne5wzp1764115568.jpg",
+    "category": "Dessert",
+    "area": "Algerian",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "53011",
+    "name": "Chicken Quinoa Greek Salad",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg",
+    "category": "Chicken",
+    "area": "Greek",
+    "dishCategory": "salad"
+  },
+  {
+    "id": "53055",
+    "name": "Cevapi Sausages",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/vc08jn1628769553.jpg",
+    "category": "Beef",
+    "area": "Croatian",
+    "dishCategory": "main"
+  },
+  {
+    "id": "53148",
+    "name": "Crema Catalana",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/x73ll91763247842.jpg",
+    "category": "Dessert",
+    "area": "Spanish",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "52921",
+    "name": "Provençal Omelette Cake",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/qwtrtp1511799242.jpg",
+    "category": "Vegetarian",
+    "area": "French",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "52929",
+    "name": "Timbits",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/txsupu1511815755.jpg",
+    "category": "Dessert",
+    "area": "Canadian",
+    "dishCategory": "dessert"
+  },
+  {
+    "id": "53310",
+    "name": "Challah",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/fm01ky1764366365.jpg",
+    "category": "Side",
+    "area": "Polish",
+    "dishCategory": "side"
+  },
+  {
+    "id": "53091",
+    "name": "Falafel Pita Sandwich with Tahini Sauce",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/ae6clc1760524712.jpg",
+    "category": "Vegetarian",
+    "area": "Syrian",
+    "dishCategory": "main"
+  },
+  {
+    "id": "52785",
+    "name": "Dal fry",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg",
+    "category": "Vegetarian",
+    "area": "Indian",
+    "dishCategory": "main"
+  },
+  {
+    "id": "53164",
+    "name": "Spanish Chicken",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/pqulvm1763282839.jpg",
+    "category": "Chicken",
+    "area": "Spanish",
+    "dishCategory": "main"
+  },
+  {
+    "id": "52913",
+    "name": "Brie wrapped in prosciutto & brioche",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/qqpwsy1511796276.jpg",
+    "category": "Side",
+    "area": "French",
+    "dishCategory": "side"
+  },
+  {
+    "id": "53016",
+    "name": "Chick-Fil-A Sandwich",
+    "imageUrl": "https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg",
+    "category": "Chicken",
+    "area": "American",
+    "dishCategory": "main"
+  }
+]
