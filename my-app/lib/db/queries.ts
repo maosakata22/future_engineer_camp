@@ -1,6 +1,6 @@
 import { eq, and, desc } from 'drizzle-orm';
 import { db } from './index';
-import { menuItems, orders, type MenuItem, type NewMenuItem, type Order, type NewOrder } from './schema';
+import { menuItems, orders, staff, type NewMenuItem, type NewOrder, type NewStaff } from './schema';
 
 // メニュー項目関連のクエリ
 export const menuQueries = {
@@ -122,5 +122,26 @@ export const dbUtils = {
   async reset() {
     await db.delete(orders);
     await db.delete(menuItems);
+  },
+};
+
+export const staffQueries = {
+  async getActiveByEmail(email: string) {
+    const result = await db
+      .select()
+      .from(staff)
+      .where(and(eq(staff.email, email), eq(staff.isActive, true)))
+      .limit(1);
+
+    return result[0] || null;
+  },
+
+  async getAll() {
+    return await db.select().from(staff).orderBy(staff.name);
+  },
+
+  async create(data: NewStaff) {
+    const result = await db.insert(staff).values(data).returning();
+    return result[0];
   },
 };

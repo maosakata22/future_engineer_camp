@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { authClient } from "@/lib/auth-client";
 import {
   Order,
   OrderItem,
@@ -101,6 +104,8 @@ function normalizeOrder(order: ApiOrder): Order {
 }
 
 export default function StaffOrdersPage() {
+  const router = useRouter();
+  const { data: session } = authClient.useSession();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -217,15 +222,34 @@ export default function StaffOrdersPage() {
             <p className="mt-2 text-sm text-muted-foreground">
               受信した注文の確認、進行ステータスの更新、座席ごとの会計確認を行えます。
             </p>
+            {session?.user?.email ? (
+              <p className="mt-2 text-xs text-muted-foreground">
+                ログイン中: {session.user.email}
+              </p>
+            ) : null}
           </div>
 
-          <div className="grid grid-cols-2 gap-2 text-sm md:grid-cols-5">
-            {orderStatusOptions.map((status) => (
-              <div key={status} className="rounded-2xl bg-muted px-3 py-2 text-center">
-                <p className="text-xs text-muted-foreground">{orderStatusLabels[status]}</p>
-                <p className="text-lg font-bold">{statusCounts[status] ?? 0}</p>
-              </div>
-            ))}
+          <div className="flex flex-col gap-3 md:items-end">
+            <div className="grid grid-cols-2 gap-2 text-sm md:grid-cols-5">
+              {orderStatusOptions.map((status) => (
+                <div key={status} className="rounded-2xl bg-muted px-3 py-2 text-center">
+                  <p className="text-xs text-muted-foreground">{orderStatusLabels[status]}</p>
+                  <p className="text-lg font-bold">{statusCounts[status] ?? 0}</p>
+                </div>
+              ))}
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              className="h-10 rounded-xl"
+              onClick={async () => {
+                await authClient.signOut();
+                router.replace("/login");
+                router.refresh();
+              }}
+            >
+              ログアウト
+            </Button>
           </div>
         </header>
 

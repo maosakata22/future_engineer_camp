@@ -9,9 +9,9 @@ const databaseUrl = process.env.DATABASE_URL || 'DATABASE_URL is not set';
 const fallbackDescription = (name: string) => `${name} のおすすめ料理です。`;
 
 const staffSeed = [
-  { name: 'Aiko', role: 'manager', isActive: true },
-  { name: 'Hiro', role: 'chef', isActive: true },
-  { name: 'Mina', role: 'server', isActive: true },
+  { name: 'Aiko', email: 'aiko@osaki-cafe.local', role: 'manager', isActive: true },
+  { name: 'Hiro', email: 'hiro@osaki-cafe.local', role: 'chef', isActive: true },
+  { name: 'Mina', email: 'mina@osaki-cafe.local', role: 'server', isActive: true },
 ];
 
 const orderSeed = [
@@ -86,11 +86,12 @@ async function seedDatabase() {
     });
 
   } catch (error) {
+    const errorDetails = error as { message?: string; code?: string; cause?: unknown };
     console.error('Error seeding database:', error);
     console.error('Error details:', {
-      message: (error as any)?.message,
-      code: (error as any)?.code,
-      cause: (error as any)?.cause,
+      message: errorDetails.message,
+      code: errorDetails.code,
+      cause: errorDetails.cause,
     });
     process.exit(1);
   }
